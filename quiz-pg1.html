@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Quiz</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+    body{
+
+      margin: 0;
+
+    }
+
+    section{
+
+      background-image: linear-gradient(LightGoldenRodYellow, pink);
+      background-repeat: no-repeat;
+      height: 725px;
+
+      padding-top: 30px;
+
+      text-align: center;
+
+    }
+
+    #quiz-score-section{
+
+      height: 1300px;
+
+    }
+
+/* the below media query is used to change the height of the quiz score section when it hits 900px */
+
+    @media screen and (min-width: 900px){
+
+      #quiz-score-section{
+
+        height: 1000px;
+
+      }
+
+
+    }/* end media query */
+
+
+    div{
+
+      /*background-color: white;*/
+      color: #ff0088;
+
+      margin: auto;
+      width: 70%;
+
+    }
+
+    #introduction-section div{
+
+      margin-top: 150px;
+
+    }
+
+    #quiz-title, #quiz-score-heading{
+
+      font-size: 60px;
+      color: #ff0088;
+
+    }
+
+    #play-quiz-button{
+
+      border-style: none;
+      border-radius: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      background-color: LightGoldenRodYellow;
+      border: 2px solid #ff0088;
+      color: #ff0088;
+
+      font-size: 30px;
+
+      display: block;
+      margin: auto;
+      width: 50%;
+
+      text-decoration: none;
+
+    }
+
+    #play-quiz-button:hover{
+
+      background-color: #ffff80;
+
+    }
+
+    .question-heading {
+
+      font-size: 45px;
+
+    }
+
+    .quiz-question, #test-score, #summary{
+
+      font-size: 35px;
+
+    }
+
+
+    .answer-button{
+
+      border-style: none;
+      border-radius: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      background-color: LightGoldenRodYellow;
+      border: 2px solid #ff0088;
+      color: #ff0088;
+
+      font-size: 30px;
+      display: block;
+
+      margin: auto;
+      width: 90%;
+
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+    }
+
+    .answer-button:hover{
+
+      background-color: #ffff80;
+
+    }
+
+    .answer-button:visited{
+
+      background-color: #ffff80;
+
+    }
+
+    .next-link, .previous-link, #finish-link, #play-again-link{
+
+      font-size: 40px;
+      color: #ff0088;
+      text-decoration: none;
+      padding-left: 10px;
+      padding-right: 10px;
+
+    }
+
+    #summary{
+
+      color: black;
+
+    }
+
+    #play-again-link{
+
+      color: #ff0088;
+
+    }
+
+    .next-link:hover, .previous-link:hover, #finish-link:hover{
+
+      color: #ffff4d;
+
+    }
+
+    #play-again-link:hover{
+
+      color: black;
+
+    }
+
+    #questions-and-answers-div{
+
+    display: none;
+
+    font-size: 20px;
+    padding-right: 5%;
+    padding-top: 5px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+
+    background-color: white;
+
+
+  }
+
+  #questions-and-answers-div p {
+
+    font-size: 35px;
+    padding-left: 8%;
+
+  }
+
+    #questions-and-answers-div ul{
+
+      list-style-type: none;
+
+    }
+
+    #questions-and-answers-div li:nth-of-type(2n + 1){
+
+      color: black;
+      background-color: LightGoldenRodYellow;
+
+    }
+
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <section id="introduction-section">
+
+      <div>
+
+      <h1 id="quiz-title">How Well<br> Do You Know Your Girlfriend?</h1>
+
+      <a id="play-quiz-button" href="#question-section-1">Play Quiz</a>
+
+      </div>
+
+    </section><!-- end of introduction section -->
+
+
+    <section id="question-section-1" class="question-section">
+
+      <div>
+
+      <h2 class="question-heading">Question 1</h2>
+      <p class="quiz-question">What is my favorite color?</p>
+
+      <div>
+      <button class="answer-button">purple</button>
+      <button class="answer-button">cyan</button>
+      <button class="answer-button">red</button>
+      <button class="answer-button">magenta</button>
+      </div>
+      <br>
+
+      <a class="previous-link" href="#introduction-section">Previous</a> <a class="next-link" href="#question-section-2">Next</a>
+
+      </div>
+
+    </section><!-- end of question section -->
+
+
+    <section id="question-section-2" class="question-section">
+
+      <div>
+
+      <h2 class="question-heading">Question 2</h2>
+      <p class="quiz-question">How old am I?</p>
+
+      <button class="answer-button">21</button>
+      <button class="answer-button">20</button>
+      <button class="answer-button">22</button>
+      <button class="answer-button">23</button>
+      <br>
+
+      <a class="previous-link" href="#question-section-1">Previous</a> <a class="next-link" href="#question-section-3">Next</a>
+
+      </div>
+
+    </section><!-- end of question section -->
+
+
+    <section id="question-section-3" class="question-section">
+
+      <div>
+
+      <h2 class="question-heading">Question 3</h2>
+      <p class="quiz-question">What is the first letter of my middle name?</p>
+
+      <button class="answer-button">A</button>
+      <button class="answer-button">D</button>
+      <button class="answer-button">B</button>
+      <button class="answer-button">E</button>
+      <br>
+
+      <a class="previous-link" href="#question-section-2">Previous</a> <a class="next-link" href="#question-section-4">Next</a>
+
+      </div>
+
+    </section><!-- end of question section -->
+
+
+    <section id="question-section-4" class="question-section">
+
+      <div>
+
+      <h2 class="question-heading">Question 4</h2>
+      <p class="quiz-question">Who is my celebrity crush?</p>
+
+      <button class="answer-button">Queen Naija</button>
+      <button class="answer-button">Chris Brown</button>
+      <button class="answer-button">DaniLeigh</button>
+      <button class="answer-button">DaBaby</button>
+      <br>
+
+      <a class="previous-link" href="#question-section-3">Previous</a> <a class="next-link" href="#question-section-5">Next</a>
+
+      </div>
+
+    </section><!-- end of question section -->
+
+
+    <section id="question-section-5" class="question-section">
+
+      <div>
+
+      <h2 class="question-heading">Question 5</h2>
+      <p class="quiz-question">What is my dog's name?</p>
+
+      <button class="answer-button">Prince</button>
+      <button class="answer-button">Pineapple</button>
+      <button class="answer-button">Milo</button>
+      <button class="answer-button">Pancake</button>
+      <br>
+
+      <a class="previous-link" href="#question-section-4">Previous</a> <a class="next-link" href="#question-section-6">Next</a>
+
+      </div>
+
+    </section><!-- end of question section -->
+
+
+    <section id="question-section-6" class="question-section">
+
+      <div>
+
+      <h2 class="question-heading">Question 6</h2>
+      <p class="quiz-question">Where did we go for our very first outing?</p>
+
+      <button class="answer-button">Fish Taco's Restaurant</button>
+      <button class="answer-button">Yogurt Place</button>
+      <button class="answer-button">Chick Fil A</button>
+      <button class="answer-button">Ihop</button>
+      <br>
+
+      <a class="previous-link" href="#question-section-5">Previous</a> <a class="next-link" href="#question-section-7">Next</a>
+
+      </div>
+
+    </section><!-- end of question section -->
+
+
+    <section id="question-section-7" class="question-section">
+
+      <div>
+
+      <h2 class="question-heading">Question 7</h2>
+      <p class="quiz-question">What is my Zodiac Sign?</p>
+
+      <button class="answer-button">Aries</button>
+      <button class="answer-button">Leo</button>
+      <button class="answer-button">Libra</button>
+      <button class="answer-button">Sagittarius</button>
+      <br>
+
+      <a class="previous-link" href="#question-section-6">Previous</a> <a class="next-link" href="#question-section-8">Next</a>
+
+      </div>
+
+    </section><!-- end of question section -->
+
+
+    <section id="question-section-8" class="question-section">
+
+      <div>
+
+      <h2 class="question-heading">Question 8</h2>
+      <p class="quiz-question">What is my favorite cereal?</p>
+
+      <button class="answer-button">Smores</button>
+      <button class="answer-button">Frosted Mini Wheats</button>
+      <button class="answer-button">Cinnamon Cheerios</button>
+      <button class="answer-button">Fruity Pebbles</button>
+      <br>
+
+      <a class="previous-link" href="#question-section-7">Previous</a>  <a id="finish-link" href="#quiz-score-section">Finish</a>
+
+      </div>
+
+    </section><!-- end of question section -->
+
+
+    <section id="quiz-score-section">
+
+      <div>
+
+        <h2 id="quiz-score-heading">Quiz Score</h2>
+
+        <p id="test-score"></p>
+
+        <div id="style-div">
+          <p id="summary"></p>
+        </div>
+
+
+        <div id="questions-and-answers-div">
+
+        <p>Correct Answers:</p>
+
+        <ul id="questions-and-answers-list">
+
+        <li>Q1: What is my favorite color?</li>
+        <li>A: red</li>
+        <li>Q2: How old am I?</li>
+        <li>A: 23</li>
+        <li>Q3: What is the first letter of my middle name?</li>
+        <li>A: A</li>
+        <li>Q4: Who is my celebrity crush?</li>
+        <li>A: DaniLeigh</li>
+        <li>Q5: What is my dog's name?</li>
+        <li>A: Prince</li>
+        <li>Q6: Where did we go for our very first outing?</li>
+        <li>A: Ihop</li>
+        <li>Q7: What is my Zodiac Sign</li>
+        <li>A: Libra</li>
+        <li>Q8: What is my favorite cereal?</li>
+        <li>A: Frosted Mini Wheats</li>
+
+        </ul>
+
+      </div><!-- end of questions and answers div -->
+
+
+      <a id="play-again-link" href="quiz-pg1.html">Play Again</a>
+
+
+      </div>
+
+    </section><!-- end of quiz score section -->
+
+    <script>
+
+    let buttonList = document.getElementsByClassName("answer-button");
+    let selectedAnswer;
+    let gottenAnswersList = [];
+    let correctAnswersList = [];
+    let quizScore;
+
+    /*EventListeners for all for buttons below */
+
+    /*Button set 1 - Question secction 1 */
+    buttonList[0].addEventListener("click", clickButton1Set1);
+    buttonList[1].addEventListener("click", clickButton2Set1);
+    buttonList[2].addEventListener("click", clickButton3Set1);
+    buttonList[3].addEventListener("click", clickButton4Set1);
+
+    /*Button set 2 - Question secction 2 */
+    buttonList[4].addEventListener("click", clickButton1Set2);
+    buttonList[5].addEventListener("click", clickButton2Set2);
+    buttonList[6].addEventListener("click", clickButton3Set2);
+    buttonList[7].addEventListener("click", clickButton4Set2);
+
+    /*Button set 3 - Question secction 3 */
+    buttonList[8].addEventListener("click", clickButton1Set3);
+    buttonList[9].addEventListener("click", clickButton2Set3);
+    buttonList[10].addEventListener("click", clickButton3Set3);
+    buttonList[11].addEventListener("click", clickButton4Set3);
+
+    /*Button set 4 - Question secction 4 */
+    buttonList[12].addEventListener("click", clickButton1Set4);
+    buttonList[13].addEventListener("click", clickButton2Set4);
+    buttonList[14].addEventListener("click", clickButton3Set4);
+    buttonList[15].addEventListener("click", clickButton4Set4);
+
+    /*Button set 5 - Question secction 5 */
+    buttonList[16].addEventListener("click", clickButton1Set5);
+    buttonList[17].addEventListener("click", clickButton2Set5);
+    buttonList[18].addEventListener("click", clickButton3Set5);
+    buttonList[19].addEventListener("click", clickButton4Set5);
+
+    /*Button set 6 - Question secction 6 */
+    buttonList[20].addEventListener("click", clickButton1Set6);
+    buttonList[21].addEventListener("click", clickButton2Set6);
+    buttonList[22].addEventListener("click", clickButton3Set6);
+    buttonList[23].addEventListener("click", clickButton4Set6);
+
+    /*Button set 7 - Question secction 7 */
+    buttonList[24].addEventListener("click", clickButton1Set7);
+    buttonList[25].addEventListener("click", clickButton2Set7);
+    buttonList[26].addEventListener("click", clickButton3Set7);
+    buttonList[27].addEventListener("click", clickButton4Set7);
+
+    /*Button set 8 - Question secction 8 */
+    buttonList[28].addEventListener("click", clickButton1Set8);
+    buttonList[29].addEventListener("click", clickButton2Set8);
+    buttonList[30].addEventListener("click", clickButton3Set8);
+    buttonList[31].addEventListener("click", clickButton4Set8);
+
+    /*Event listener is added to the html finish link element below */
+
+    let finished_link = document.getElementById("finish-link");
+    finished_link.addEventListener("click", getTestScore);
+
+
+
+
+    /*Functions for button set 1  - Question section 1  */
+
+    function clickButton1Set1(){
+
+      buttonList[0].style.backgroundColor = "white";
+      buttonList[0].style.borderColor = "#ff0088";
+      buttonList[0].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[0].childNodes[0].nodeValue;
+      gottenAnswersList[0] = selectedAnswer;
+
+      buttonList[1].style.borderColor = "grey";
+      buttonList[1].style.color = "grey";
+      buttonList[1].style.backgroundColor = "lightgrey";
+
+      buttonList[2].style.borderColor = "grey";
+      buttonList[2].style.color = "grey";
+      buttonList[2].style.backgroundColor = "lightgrey";
+
+      buttonList[3].style.borderColor = "grey";
+      buttonList[3].style.color = "grey";
+      buttonList[3].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 1 set 1
+
+
+    function clickButton2Set1(){
+
+      buttonList[1].style.backgroundColor = "white";
+      buttonList[1].style.borderColor = "#ff0088";
+      buttonList[1].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[1].childNodes[0].nodeValue;
+      gottenAnswersList[0] = selectedAnswer;
+
+      buttonList[0].style.borderColor = "grey";
+      buttonList[0].style.color = "grey";
+      buttonList[0].style.backgroundColor = "lightgrey";
+
+      buttonList[2].style.borderColor = "grey";
+      buttonList[2].style.color = "grey";
+      buttonList[2].style.backgroundColor = "lightgrey";
+
+      buttonList[3].style.borderColor = "grey";
+      buttonList[3].style.color = "grey";
+      buttonList[3].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 2 set 1
+
+
+
+    function clickButton3Set1(){
+
+      buttonList[2].style.backgroundColor = "white";
+      buttonList[2].style.borderColor = "#ff0088";
+      buttonList[2].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[2].childNodes[0].nodeValue;
+      gottenAnswersList[0] = selectedAnswer;
+
+      /*Below is an if statement to test if an gotten answer is correct. If an answer gotten is correct,
+      it will go in the correctAnswersList[] array.*/
+
+      if (gottenAnswersList[0] = selectedAnswer){
+
+        correctAnswersList.push(gottenAnswersList[0]);
+        //console.log(correctAnswersList[0]);
+
+      }//end first if statement
+
+
+      buttonList[0].style.borderColor = "grey";
+      buttonList[0].style.color = "grey";
+      buttonList[0].style.backgroundColor = "lightgrey";
+
+      buttonList[1].style.borderColor = "grey";
+      buttonList[1].style.color = "grey";
+      buttonList[1].style.backgroundColor = "lightgrey";
+
+      buttonList[3].style.borderColor = "grey";
+      buttonList[3].style.color = "grey";
+      buttonList[3].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 3 set 1
+
+
+
+    function clickButton4Set1(){
+
+      buttonList[3].style.backgroundColor = "white";
+      buttonList[3].style.borderColor = "#ff0088";
+      buttonList[3].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[3].childNodes[0].nodeValue;
+      gottenAnswersList[0] = selectedAnswer;
+
+      buttonList[0].style.borderColor = "grey";
+      buttonList[0].style.color = "grey";
+      buttonList[0].style.backgroundColor = "lightgrey";
+
+      buttonList[1].style.borderColor = "grey";
+      buttonList[1].style.color = "grey";
+      buttonList[1].style.backgroundColor = "lightgrey";
+
+      buttonList[2].style.borderColor = "grey";
+      buttonList[2].style.color = "grey";
+      buttonList[2].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 4 set 1
+
+
+
+    /*Functions for button set 2  - Question section 2  */
+
+    function clickButton1Set2(){
+
+      buttonList[4].style.backgroundColor = "white";
+      buttonList[4].style.borderColor = "#ff0088";
+      buttonList[4].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[4].childNodes[0].nodeValue;
+      gottenAnswersList[1] = selectedAnswer;
+
+      buttonList[5].style.borderColor = "grey";
+      buttonList[5].style.color = "grey";
+      buttonList[5].style.backgroundColor = "lightgrey";
+
+      buttonList[6].style.borderColor = "grey";
+      buttonList[6].style.color = "grey";
+      buttonList[6].style.backgroundColor = "lightgrey";
+
+      buttonList[7].style.borderColor = "grey";
+      buttonList[7].style.color = "grey";
+      buttonList[7].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 1 set 2
+
+
+    function clickButton2Set2(){
+
+      buttonList[5].style.backgroundColor = "white";
+      buttonList[5].style.borderColor = "#ff0088";
+      buttonList[5].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[5].childNodes[0].nodeValue;
+      gottenAnswersList[1] = selectedAnswer;
+
+      buttonList[4].style.borderColor = "grey";
+      buttonList[4].style.color = "grey";
+      buttonList[4].style.backgroundColor = "lightgrey";
+
+      buttonList[6].style.borderColor = "grey";
+      buttonList[6].style.color = "grey";
+      buttonList[6].style.backgroundColor = "lightgrey";
+
+      buttonList[7].style.borderColor = "grey";
+      buttonList[7].style.color = "grey";
+      buttonList[7].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 2 set 2
+
+
+
+    function clickButton3Set2(){
+
+      buttonList[6].style.backgroundColor = "white";
+      buttonList[6].style.borderColor = "#ff0088";
+      buttonList[6].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[6].childNodes[0].nodeValue;
+      gottenAnswersList[1] = selectedAnswer;
+
+      buttonList[4].style.borderColor = "grey";
+      buttonList[4].style.color = "grey";
+      buttonList[4].style.backgroundColor = "lightgrey";
+
+      buttonList[5].style.borderColor = "grey";
+      buttonList[5].style.color = "grey";
+      buttonList[5].style.backgroundColor = "lightgrey";
+
+      buttonList[7].style.borderColor = "grey";
+      buttonList[7].style.color = "grey";
+      buttonList[7].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 3 set 2
+
+
+
+    function clickButton4Set2(){
+
+      buttonList[7].style.backgroundColor = "white";
+      buttonList[7].style.borderColor = "#ff0088";
+      buttonList[7].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[7].childNodes[0].nodeValue;
+      gottenAnswersList[1] = selectedAnswer;
+
+      /*Below is an if statement to test if an gotten answer is correct. If an answer gotten is correct,
+      it will go in the correctAnswersList[] array.*/
+
+      if (gottenAnswersList[1] = selectedAnswer){
+
+        correctAnswersList.push(gottenAnswersList[1]);
+        //console.log(correctAnswersList[1]);
+
+      }//end second if statement
+
+
+      buttonList[4].style.borderColor = "grey";
+      buttonList[4].style.color = "grey";
+      buttonList[4].style.backgroundColor = "lightgrey";
+
+      buttonList[5].style.borderColor = "grey";
+      buttonList[5].style.color = "grey";
+      buttonList[5].style.backgroundColor = "lightgrey";
+
+      buttonList[6].style.borderColor = "grey";
+      buttonList[6].style.color = "grey";
+      buttonList[6].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 4 set 2
+
+
+
+
+    /*Functions for button set 3  - Question section 3  */
+
+    function clickButton1Set3(){
+
+      buttonList[8].style.backgroundColor = "white";
+      buttonList[8].style.borderColor = "#ff0088";
+      buttonList[8].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[8].childNodes[0].nodeValue;
+      gottenAnswersList[2] = selectedAnswer;
+
+      /*Below is an if statement to test if an gotten answer is correct. If an answer gotten is correct,
+      it will go in the correctAnswersList[] array.*/
+
+      if (gottenAnswersList[2] = selectedAnswer){
+
+        correctAnswersList.push(gottenAnswersList[2]);
+        //console.log(correctAnswersList[2]);
+
+      }//end third if statement
+
+
+      buttonList[9].style.borderColor = "grey";
+      buttonList[9].style.color = "grey";
+      buttonList[9].style.backgroundColor = "lightgrey";
+
+      buttonList[10].style.borderColor = "grey";
+      buttonList[10].style.color = "grey";
+      buttonList[10].style.backgroundColor = "lightgrey";
+
+      buttonList[11].style.borderColor = "grey";
+      buttonList[11].style.color = "grey";
+      buttonList[11].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 1 set 3
+
+
+    function clickButton2Set3(){
+
+      buttonList[9].style.backgroundColor = "white";
+      buttonList[9].style.borderColor = "#ff0088";
+      buttonList[9].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[9].childNodes[0].nodeValue;
+      gottenAnswersList[2] = selectedAnswer;
+
+      buttonList[8].style.borderColor = "grey";
+      buttonList[8].style.color = "grey";
+      buttonList[8].style.backgroundColor = "lightgrey";
+
+      buttonList[10].style.borderColor = "grey";
+      buttonList[10].style.color = "grey";
+      buttonList[10].style.backgroundColor = "lightgrey";
+
+      buttonList[11].style.borderColor = "grey";
+      buttonList[11].style.color = "grey";
+      buttonList[11].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 2 set 3
+
+
+
+    function clickButton3Set3(){
+
+      buttonList[10].style.backgroundColor = "white";
+      buttonList[10].style.borderColor = "#ff0088";
+      buttonList[10].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[10].childNodes[0].nodeValue;
+      gottenAnswersList[2] = selectedAnswer;
+
+
+      buttonList[8].style.borderColor = "grey";
+      buttonList[8].style.color = "grey";
+      buttonList[8].style.backgroundColor = "lightgrey";
+
+      buttonList[9].style.borderColor = "grey";
+      buttonList[9].style.color = "grey";
+      buttonList[9].style.backgroundColor = "lightgrey";
+
+      buttonList[11].style.borderColor = "grey";
+      buttonList[11].style.color = "grey";
+      buttonList[11].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 3 set 3
+
+
+
+    function clickButton4Set3(){
+
+      buttonList[11].style.backgroundColor = "white";
+      buttonList[11].style.borderColor = "#ff0088";
+      buttonList[11].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[11].childNodes[0].nodeValue;
+      gottenAnswersList[2] = selectedAnswer;
+
+      buttonList[8].style.borderColor = "grey";
+      buttonList[8].style.color = "grey";
+      buttonList[8].style.backgroundColor = "lightgrey";
+
+      buttonList[9].style.borderColor = "grey";
+      buttonList[9].style.color = "grey";
+      buttonList[9].style.backgroundColor = "lightgrey";
+
+      buttonList[10].style.borderColor = "grey";
+      buttonList[10].style.color = "grey";
+      buttonList[10].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 4 set 3
+
+
+
+
+    /*Functions for button set 4  - Question section 4  */
+
+    function clickButton1Set4(){
+
+      buttonList[12].style.backgroundColor = "white";
+      buttonList[12].style.borderColor = "#ff0088";
+      buttonList[12].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[12].childNodes[0].nodeValue;
+      gottenAnswersList[3] = selectedAnswer;
+
+      buttonList[13].style.borderColor = "grey";
+      buttonList[13].style.color = "grey";
+      buttonList[13].style.backgroundColor = "lightgrey";
+
+      buttonList[14].style.borderColor = "grey";
+      buttonList[14].style.color = "grey";
+      buttonList[14].style.backgroundColor = "lightgrey";
+
+      buttonList[15].style.borderColor = "grey";
+      buttonList[15].style.color = "grey";
+      buttonList[15].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 1 set 4
+
+
+    function clickButton2Set4(){
+
+      buttonList[13].style.backgroundColor = "white";
+      buttonList[13].style.borderColor = "#ff0088";
+      buttonList[13].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[13].childNodes[0].nodeValue;
+      gottenAnswersList[3] = selectedAnswer;
+
+      buttonList[12].style.borderColor = "grey";
+      buttonList[12].style.color = "grey";
+      buttonList[12].style.backgroundColor = "lightgrey";
+
+      buttonList[14].style.borderColor = "grey";
+      buttonList[14].style.color = "grey";
+      buttonList[14].style.backgroundColor = "lightgrey";
+
+      buttonList[15].style.borderColor = "grey";
+      buttonList[15].style.color = "grey";
+      buttonList[15].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 2 set 4
+
+
+
+    function clickButton3Set4(){
+
+      buttonList[14].style.backgroundColor = "white";
+      buttonList[14].style.borderColor = "#ff0088";
+      buttonList[14].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[14].childNodes[0].nodeValue;
+      gottenAnswersList[3] = selectedAnswer;
+
+      /*Below is an if statement to test if an gotten answer is correct. If an answer gotten is correct,
+      it will go in the correctAnswersList[] array.*/
+
+      if (gottenAnswersList[3] = selectedAnswer){
+
+        correctAnswersList.push(gottenAnswersList[3]);
+        //console.log(correctAnswersList[3]);
+
+      }//end fourth if statement
+
+
+      buttonList[12].style.borderColor = "grey";
+      buttonList[12].style.color = "grey";
+      buttonList[12].style.backgroundColor = "lightgrey";
+
+      buttonList[13].style.borderColor = "grey";
+      buttonList[13].style.color = "grey";
+      buttonList[13].style.backgroundColor = "lightgrey";
+
+      buttonList[15].style.borderColor = "grey";
+      buttonList[15].style.color = "grey";
+      buttonList[15].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 3 set 4
+
+
+
+    function clickButton4Set4(){
+
+      buttonList[15].style.backgroundColor = "white";
+      buttonList[15].style.borderColor = "#ff0088";
+      buttonList[15].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[15].childNodes[0].nodeValue;
+      gottenAnswersList[3] = selectedAnswer;
+
+      buttonList[12].style.borderColor = "grey";
+      buttonList[12].style.color = "grey";
+      buttonList[12].style.backgroundColor = "lightgrey";
+
+      buttonList[13].style.borderColor = "grey";
+      buttonList[13].style.color = "grey";
+      buttonList[13].style.backgroundColor = "lightgrey";
+
+      buttonList[14].style.borderColor = "grey";
+      buttonList[14].style.color = "grey";
+      buttonList[14].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 4 set 4
+
+
+
+    /*Functions for button set 5  - Question section 5  */
+
+    function clickButton1Set5(){
+
+      buttonList[16].style.backgroundColor = "white";
+      buttonList[16].style.borderColor = "#ff0088";
+      buttonList[16].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[16].childNodes[0].nodeValue;
+      gottenAnswersList[4] = selectedAnswer;
+
+      /*Below is an if statement to test if an gotten answer is correct. If an answer gotten is correct,
+      it will go in the correctAnswersList[] array.*/
+
+      if (gottenAnswersList[4] = selectedAnswer){
+
+        correctAnswersList.push(gottenAnswersList[4]);
+        //console.log(correctAnswersList[4]);
+
+      }//end fifth if statement
+
+
+
+      buttonList[17].style.borderColor = "grey";
+      buttonList[17].style.color = "grey";
+      buttonList[17].style.backgroundColor = "lightgrey";
+
+      buttonList[18].style.borderColor = "grey";
+      buttonList[18].style.color = "grey";
+      buttonList[18].style.backgroundColor = "lightgrey";
+
+      buttonList[19].style.borderColor = "grey";
+      buttonList[19].style.color = "grey";
+      buttonList[19].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 1 set 5
+
+
+    function clickButton2Set5(){
+
+      buttonList[17].style.backgroundColor = "white";
+      buttonList[17].style.borderColor = "#ff0088";
+      buttonList[17].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[17].childNodes[0].nodeValue;
+      gottenAnswersList[4] = selectedAnswer;
+
+      buttonList[16].style.borderColor = "grey";
+      buttonList[16].style.color = "grey";
+      buttonList[16].style.backgroundColor = "lightgrey";
+
+      buttonList[18].style.borderColor = "grey";
+      buttonList[18].style.color = "grey";
+      buttonList[18].style.backgroundColor = "lightgrey";
+
+      buttonList[19].style.borderColor = "grey";
+      buttonList[19].style.color = "grey";
+      buttonList[19].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 2 set 5
+
+
+
+    function clickButton3Set5(){
+
+      buttonList[18].style.backgroundColor = "white";
+      buttonList[18].style.borderColor = "#ff0088";
+      buttonList[18].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[18].childNodes[0].nodeValue;
+      gottenAnswersList[4] = selectedAnswer;
+
+      buttonList[16].style.borderColor = "grey";
+      buttonList[16].style.color = "grey";
+      buttonList[16].style.backgroundColor = "lightgrey";
+
+      buttonList[17].style.borderColor = "grey";
+      buttonList[17].style.color = "grey";
+      buttonList[17].style.backgroundColor = "lightgrey";
+
+      buttonList[19].style.borderColor = "grey";
+      buttonList[19].style.color = "grey";
+      buttonList[19].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 3 set 5
+
+
+
+    function clickButton4Set5(){
+
+      buttonList[19].style.backgroundColor = "white";
+      buttonList[19].style.borderColor = "#ff0088";
+      buttonList[19].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[19].childNodes[0].nodeValue;
+      gottenAnswersList[4] = selectedAnswer;
+
+      buttonList[16].style.borderColor = "grey";
+      buttonList[16].style.color = "grey";
+      buttonList[16].style.backgroundColor = "lightgrey";
+
+      buttonList[17].style.borderColor = "grey";
+      buttonList[17].style.color = "grey";
+      buttonList[17].style.backgroundColor = "lightgrey";
+
+      buttonList[18].style.borderColor = "grey";
+      buttonList[18].style.color = "grey";
+      buttonList[18].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 4 set 5
+
+
+
+
+    /*Functions for button set 6  - Question section 6  */
+
+    function clickButton1Set6(){
+
+      buttonList[20].style.backgroundColor = "white";
+      buttonList[20].style.borderColor = "#ff0088";
+      buttonList[20].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[20].childNodes[0].nodeValue;
+      gottenAnswersList[5] = selectedAnswer;
+
+      buttonList[21].style.borderColor = "grey";
+      buttonList[21].style.color = "grey";
+      buttonList[21].style.backgroundColor = "lightgrey";
+
+      buttonList[22].style.borderColor = "grey";
+      buttonList[22].style.color = "grey";
+      buttonList[22].style.backgroundColor = "lightgrey";
+
+      buttonList[23].style.borderColor = "grey";
+      buttonList[23].style.color = "grey";
+      buttonList[23].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 1 set 6
+
+
+    function clickButton2Set6(){
+
+      buttonList[21].style.backgroundColor = "white";
+      buttonList[21].style.borderColor = "#ff0088";
+      buttonList[21].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[21].childNodes[0].nodeValue;
+      gottenAnswersList[5] = selectedAnswer;
+
+      buttonList[20].style.borderColor = "grey";
+      buttonList[20].style.color = "grey";
+      buttonList[20].style.backgroundColor = "lightgrey";
+
+      buttonList[22].style.borderColor = "grey";
+      buttonList[22].style.color = "grey";
+      buttonList[22].style.backgroundColor = "lightgrey";
+
+      buttonList[23].style.borderColor = "grey";
+      buttonList[23].style.color = "grey";
+      buttonList[23].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 2 set 6
+
+
+
+    function clickButton3Set6(){
+
+      buttonList[22].style.backgroundColor = "white";
+      buttonList[22].style.borderColor = "#ff0088";
+      buttonList[22].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[22].childNodes[0].nodeValue;
+      gottenAnswersList[5] = selectedAnswer;
+
+      buttonList[20].style.borderColor = "grey";
+      buttonList[20].style.color = "grey";
+      buttonList[20].style.backgroundColor = "lightgrey";
+
+      buttonList[21].style.borderColor = "grey";
+      buttonList[21].style.color = "grey";
+      buttonList[21].style.backgroundColor = "lightgrey";
+
+      buttonList[23].style.borderColor = "grey";
+      buttonList[23].style.color = "grey";
+      buttonList[23].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 3 set 6
+
+
+
+    function clickButton4Set6(){
+
+      buttonList[23].style.backgroundColor = "white";
+      buttonList[23].style.borderColor = "#ff0088";
+      buttonList[23].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[23].childNodes[0].nodeValue;
+      gottenAnswersList[5] = selectedAnswer;
+
+      /*Below is an if statement to test if an gotten answer is correct. If an answer gotten is correct,
+      it will go in the correctAnswersList[] array.*/
+
+      if (gottenAnswersList[5] = selectedAnswer){
+
+        correctAnswersList.push(gottenAnswersList[5]);
+        //console.log(correctAnswersList[5]);
+
+      }//end sixth if statement
+
+
+
+      buttonList[20].style.borderColor = "grey";
+      buttonList[20].style.color = "grey";
+      buttonList[20].style.backgroundColor = "lightgrey";
+
+      buttonList[21].style.borderColor = "grey";
+      buttonList[21].style.color = "grey";
+      buttonList[21].style.backgroundColor = "lightgrey";
+
+      buttonList[22].style.borderColor = "grey";
+      buttonList[22].style.color = "grey";
+      buttonList[22].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 4 set 6
+
+
+
+    /*Functions for button set 7  - Question section 7  */
+
+
+    function clickButton1Set7(){
+
+      buttonList[24].style.backgroundColor = "white";
+      buttonList[24].style.borderColor = "#ff0088";
+      buttonList[24].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[24].childNodes[0].nodeValue;
+      gottenAnswersList[6] = selectedAnswer;
+
+      buttonList[25].style.borderColor = "grey";
+      buttonList[25].style.color = "grey";
+      buttonList[25].style.backgroundColor = "lightgrey";
+
+      buttonList[26].style.borderColor = "grey";
+      buttonList[26].style.color = "grey";
+      buttonList[26].style.backgroundColor = "lightgrey";
+
+      buttonList[27].style.borderColor = "grey";
+      buttonList[27].style.color = "grey";
+      buttonList[27].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 1 set 7
+
+
+    function clickButton2Set7(){
+
+      buttonList[25].style.backgroundColor = "white";
+      buttonList[25].style.borderColor = "#ff0088";
+      buttonList[25].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[25].childNodes[0].nodeValue;
+      gottenAnswersList[6] = selectedAnswer;
+
+      buttonList[24].style.borderColor = "grey";
+      buttonList[24].style.color = "grey";
+      buttonList[24].style.backgroundColor = "lightgrey";
+
+      buttonList[26].style.borderColor = "grey";
+      buttonList[26].style.color = "grey";
+      buttonList[26].style.backgroundColor = "lightgrey";
+
+      buttonList[27].style.borderColor = "grey";
+      buttonList[27].style.color = "grey";
+      buttonList[27].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 2 set 7
+
+
+
+    function clickButton3Set7(){
+
+      buttonList[26].style.backgroundColor = "white";
+      buttonList[26].style.borderColor = "#ff0088";
+      buttonList[26].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[26].childNodes[0].nodeValue;
+      gottenAnswersList[6] = selectedAnswer;
+
+      /*Below is an if statement to test if an gotten answer is correct. If an answer gotten is correct,
+      it will go in the correctAnswersList[] array.*/
+
+      if (gottenAnswersList[6] = selectedAnswer){
+
+        correctAnswersList.push(gottenAnswersList[6]);
+        //console.log(correctAnswersList[6]);
+
+      }//end seventh if statement
+
+
+      buttonList[24].style.borderColor = "grey";
+      buttonList[24].style.color = "grey";
+      buttonList[24].style.backgroundColor = "lightgrey";
+
+      buttonList[25].style.borderColor = "grey";
+      buttonList[25].style.color = "grey";
+      buttonList[25].style.backgroundColor = "lightgrey";
+
+      buttonList[27].style.borderColor = "grey";
+      buttonList[27].style.color = "grey";
+      buttonList[27].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 3 set 7
+
+
+
+    function clickButton4Set7(){
+
+      buttonList[27].style.backgroundColor = "white";
+      buttonList[27].style.borderColor = "#ff0088";
+      buttonList[27].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[27].childNodes[0].nodeValue;
+      gottenAnswersList[6] = selectedAnswer;
+
+      buttonList[24].style.borderColor = "grey";
+      buttonList[24].style.color = "grey";
+      buttonList[24].style.backgroundColor = "lightgrey";
+
+      buttonList[25].style.borderColor = "grey";
+      buttonList[25].style.color = "grey";
+      buttonList[25].style.backgroundColor = "lightgrey";
+
+      buttonList[26].style.borderColor = "grey";
+      buttonList[26].style.color = "grey";
+      buttonList[26].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 4 set 7
+
+
+
+    /*Functions for button set 8  - Question section 8  */
+
+    function clickButton1Set8(){
+
+      buttonList[28].style.backgroundColor = "white";
+      buttonList[28].style.borderColor = "#ff0088";
+      buttonList[28].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[28].childNodes[0].nodeValue;
+      gottenAnswersList[7] = selectedAnswer;
+
+      buttonList[29].style.borderColor = "grey";
+      buttonList[29].style.color = "grey";
+      buttonList[29].style.backgroundColor = "lightgrey";
+
+      buttonList[30].style.borderColor = "grey";
+      buttonList[30].style.color = "grey";
+      buttonList[30].style.backgroundColor = "lightgrey";
+
+      buttonList[31].style.borderColor = "grey";
+      buttonList[31].style.color = "grey";
+      buttonList[31].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 1 set 8
+
+
+    function clickButton2Set8(){
+
+      buttonList[29].style.backgroundColor = "white";
+      buttonList[29].style.borderColor = "#ff0088";
+      buttonList[29].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[29].childNodes[0].nodeValue;
+      gottenAnswersList[7] = selectedAnswer;
+
+      /*Below is an if statement to test if an gotten answer is correct. If an answer gotten is correct,
+      it will go in the correctAnswersList[] array.*/
+
+      if (gottenAnswersList[7] = selectedAnswer){
+
+        correctAnswersList.push(gottenAnswersList[7]);
+        //console.log(correctAnswersList);
+
+      }//end eighth if statement
+
+
+
+      buttonList[28].style.borderColor = "grey";
+      buttonList[28].style.color = "grey";
+      buttonList[28].style.backgroundColor = "lightgrey";
+
+      buttonList[30].style.borderColor = "grey";
+      buttonList[30].style.color = "grey";
+      buttonList[30].style.backgroundColor = "lightgrey";
+
+      buttonList[31].style.borderColor = "grey";
+      buttonList[31].style.color = "grey";
+      buttonList[31].style.backgroundColor = "lightgrey";
+
+
+    }// end of function click button 2 set 8
+
+
+
+    function clickButton3Set8(){
+
+      buttonList[30].style.backgroundColor = "white";
+      buttonList[30].style.borderColor = "#ff0088";
+      buttonList[30].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[30].childNodes[0].nodeValue;
+      gottenAnswersList[7] = selectedAnswer;
+
+
+      buttonList[28].style.borderColor = "grey";
+      buttonList[28].style.color = "grey";
+      buttonList[28].style.backgroundColor = "lightgrey";
+
+      buttonList[29].style.borderColor = "grey";
+      buttonList[29].style.color = "grey";
+      buttonList[29].style.backgroundColor = "lightgrey";
+
+      buttonList[31].style.borderColor = "grey";
+      buttonList[31].style.color = "grey";
+      buttonList[31].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 3 set 8
+
+
+
+    function clickButton4Set8(){
+
+      buttonList[31].style.backgroundColor = "white";
+      buttonList[31].style.borderColor = "#ff0088";
+      buttonList[31].style.color = "#ff0088";
+
+      selectedAnswer = buttonList[31].childNodes[0].nodeValue;
+      gottenAnswersList[7] = selectedAnswer;
+
+      buttonList[28].style.borderColor = "grey";
+      buttonList[28].style.color = "grey";
+      buttonList[28].style.backgroundColor = "lightgrey";
+
+      buttonList[29].style.borderColor = "grey";
+      buttonList[29].style.color = "grey";
+      buttonList[29].style.backgroundColor = "lightgrey";
+
+      buttonList[30].style.borderColor = "grey";
+      buttonList[30].style.color = "grey";
+      buttonList[30].style.backgroundColor = "lightgrey";
+
+    }// end of function click button 4 set 8
+
+
+
+    /*Below is a conditional statement to test and get the score for the quiz,
+    based on the correctAnswersList[] */
+
+
+    function getTestScore() {
+
+      console.log(correctAnswersList.length);
+      console.log(correctAnswersList);
+
+      if (correctAnswersList.length === 8){
+
+        quizScore = "100 %";
+        document.getElementById("test-score").innerHTML = "Your score is " + quizScore;
+        document.getElementById("summary").innerHTML = "Awesome! You pay GREAT attention to your girlfriend!";
+        document.getElementById("style-div").style.backgroundColor = "white";
+
+      }
+
+      if (correctAnswersList.length === 7){
+
+        quizScore = "87.5 %";
+        document.getElementById("test-score").innerHTML = "Your score is " + quizScore;
+        document.getElementById("summary").innerHTML = "Good Job! You pay GOOD attention to your girlfriend!";
+        document.getElementById("style-div").style.backgroundColor = "white";
+
+      }
+
+      if (correctAnswersList.length === 6){
+
+        quizScore = "75 %";
+        document.getElementById("test-score").innerHTML = "Your score is " + quizScore;
+        document.getElementById("summary").innerHTML = "Good Job! You pay GOOD attention to your girlfriend!";
+        document.getElementById("style-div").style.backgroundColor = "white";
+
+      }
+
+      if (correctAnswersList.length === 5){
+
+        quizScore = "62.5 %";
+        document.getElementById("test-score").innerHTML = "Your score is " + quizScore;
+        document.getElementById("summary").innerHTML = "You pay OKAY attention to your girlfriend!";
+        document.getElementById("style-div").style.backgroundColor = "white";
+
+      }
+
+      if (correctAnswersList.length === 4){
+
+        quizScore = "50 %";
+        document.getElementById("test-score").innerHTML = "Your score is " + quizScore;
+        document.getElementById("summary").innerHTML = "You pay OKAY attention to your girlfriend!";
+        document.getElementById("style-div").style.backgroundColor = "white";
+
+      }
+
+      if (correctAnswersList.length === 3){
+
+        quizScore = "37.5 %";
+        document.getElementById("test-score").innerHTML = "Your score is " + quizScore;
+        document.getElementById("summary").innerHTML = "You pay SUBPAR attention to your girlfriend!";
+        document.getElementById("style-div").style.backgroundColor = "white";
+
+      }
+
+
+      if (correctAnswersList.length === 2){
+
+        quizScore = "25 %";
+        document.getElementById("test-score").innerHTML = "Your score is " + quizScore;
+        document.getElementById("summary").innerHTML = "You barely pay your girlfriend ANY attention!";
+        document.getElementById("style-div").style.backgroundColor = "white";
+
+      }
+
+      if (correctAnswersList.length === 1){
+
+        quizScore = "12.5 %";
+        document.getElementById("test-score").innerHTML = "Your score is " + quizScore;
+        document.getElementById("summary").innerHTML = "You barely pay your girlfriend ANY attention!";
+        document.getElementById("style-div").style.backgroundColor = "white";
+
+      }
+
+      if (correctAnswersList.length === 0){
+
+        quizScore = "0";
+        document.getElementById("test-score").innerHTML = "Your score is " + quizScore;
+        document.getElementById("summary").innerHTML = "You pay your girlfriend ZERO attention!";
+        document.getElementById("style-div").style.backgroundColor = "white";
+
+      }
+
+      document.getElementById("questions-and-answers-div").style.display = "block";
+
+
+    }// end getTestScore function
+
+
+
+
+
+
+
+    </script>
+
+  </body>
+
+</html>
